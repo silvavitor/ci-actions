@@ -12,6 +12,8 @@
     "typescript": "^5.5.4"
   },
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "test": "jest",
+    "ci:typechecking": "tsc --noEmit"
   }
 }
