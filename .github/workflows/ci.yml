@@ -1,0 +1,28 @@
+name: ci github actions
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          cache: "yarn"
+
+      - name: install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: typechecking
+        run: yarn ci:typechecking
+
+      - name: tests
+        run: yarn test
