@@ -5,5 +5,6 @@ console.log("app running");
 
 const added = sum(1, 2);
 const subtracted = subtract(2, 1);
+const multiply = subtract(3, 1);
 
-console.log({ added, subtracted });
+console.log({ added, subtracted, multiply });
